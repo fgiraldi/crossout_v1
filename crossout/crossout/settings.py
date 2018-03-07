@@ -128,3 +128,5 @@ STATIC_URL = '/static/'
 # MEDIA_ROOT para definir donde se hace upload de los archivos que van en los FileField e ImageField
 MEDIA_ROOT = '/home/usuario/python/practica/crossout_v1/crossout/game/static/'
 # MEDIA_URL = '/uploads/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/crossout/users/storage/'
