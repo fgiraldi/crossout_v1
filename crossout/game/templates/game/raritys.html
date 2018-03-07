@@ -1,0 +1,13 @@
+<style type="text/css">
+{% for rarity in raritys %}
+.pieza.{{ rarity.nombre }} {
+    border-top-color: {{ rarity.color }};
+}
+.pieza.{{ rarity.nombre }} .nombre {
+    color: {{ rarity.color }};
+}
+.pieza.{{ rarity.nombre }} .existencia {
+    color: {{ rarity.color }};
+}
+{% endfor %}
+</style>
