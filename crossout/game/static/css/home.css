@@ -1,0 +1,36 @@
+.home {
+  background-image: url('../images/home_background.jpg');
+  background-size: 100%;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.home .content {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;*/
+  background-color: rgba(68, 68, 68, 0.9);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.home .content h1 {
+  margin: 0px;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2.5em;
+  color: darkorange;
+  text-shadow: 2px 2px 5px black;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.home .content a {
+  text-align: center;
+  margin: 50px;
+  background-color: lightgray;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5em;
+  line-height: 2em;
+}

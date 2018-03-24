@@ -1,12 +1,10 @@
 {% load static %}
+{% load piezas_tags %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
-{% include "game/raritys.html" %}
+{% include "game/raritys_css.html" %}
 <h1>Viendo el storage del usuario {{ user_id }}</h1>
 <div class="almacen">
     {% for pieza_almacenada in piezas_almacenadas %}
-        <div class="pieza {{ pieza_almacenada.pieza.rarity }}" style="background-image: url('{% static pieza_almacenada.pieza.imagen.url %}');">
-            <div class="nombre">{{ pieza_almacenada.pieza.nombre }}</div>
-            <div class="existencia">{% if pieza_almacenada.quantity != 1 %}x{{ pieza_almacenada.quantity }}{% endif %}</div>
-        </div>        
+        {% pieza_en_almacen pieza_almacenada %}
     {% endfor %}
 </div>

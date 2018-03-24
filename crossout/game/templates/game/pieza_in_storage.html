@@ -1,0 +1,5 @@
+{% load static %}
+<div class="pieza {{ pieza_almacenada.pieza.rarity }}" style="background-image: url('{% static pieza_almacenada.pieza.imagen.url %}');">
+    <div class="nombre">{{ pieza_almacenada.pieza.nombre }}</div>
+    <div class="existencia">{% if pieza_almacenada.quantity != 1 %}x{{ pieza_almacenada.quantity }}{% endif %}</div>
+</div>        
