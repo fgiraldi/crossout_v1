@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<div class="menu_bar">
+    {% for btn in items_menu %}
+    <div class="button_container">
+        <div class="fondo {% if btn.selected %}resaltado{% endif %}"></div>
+        <div class="button"><a href="{% url btn.view %}">{{ btn }}</a></div>
+    </div>
+    {% endfor %}
+</div>
+{% block content %}
+{% endblock %}

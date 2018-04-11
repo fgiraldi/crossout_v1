@@ -1,6 +1,7 @@
+{% extends 'game/logged_user.html' %}
 {% load static %}
 {% load piezas_tags %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+{% block content %}
 {% include "game/raritys_css.html" %}
 <h1>Viendo el storage del usuario {{ user_id }}</h1>
 <div class="almacen">
@@ -8,3 +9,4 @@
         {% pieza_en_almacen pieza_almacenada %}
     {% endfor %}
 </div>
+{% endblock %}
