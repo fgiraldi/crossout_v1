@@ -1,0 +1,63 @@
+{% load static %}
+<style type="text/css">
+    .rombo {
+        display: block;
+        position: absolute;
+        top: 0px;
+        opacity: .7;
+    }
+    .rombo1 {
+        z-index: -1;
+    }
+    .rombo2 {
+        z-index: -2;
+        left: 50px;
+        opacity: .5;
+    }
+    .rombo3 {
+        opacity: .4;
+        left: 50%;
+    }
+    .rombo4 {
+        opacity: .4;
+        right: 1%;
+    }
+    .movedizo {
+        transform: translateX(200px);        
+    }
+    .movedizo2 {
+        transform: translateX(235px);        
+    }
+    .movedizo3 {
+        transform: translateX(-170px);        
+    }
+    .movedizo4 {
+        transform: translateX(-260px);        
+    }
+</style>
+<img class="rombo rombo1" src='{% static "images/rombo_fondo_01.png" %}' data-clase="movedizo" data-delay="10"/>
+<img class="rombo rombo2" src='{% static "images/rombo_fondo_02.png" %}' data-clase="movedizo2" data-delay="9.2"/>
+<img class="rombo rombo3" src='{% static "images/rombo_fondo_03.png" %}' data-clase="movedizo3" data-delay="12"/>
+<img class="rombo rombo4" src='{% static "images/rombo_fondo_04.png" %}' data-clase="movedizo4" data-delay="15"/>
+<script async>
+    let altura = window.innerHeight;
+    function mover(r1){
+        r1.style.height = `${altura}px`;
+        r1.addEventListener('transitionend', function(e){
+            if(e.propertyName === 'transform'){
+                if(r1.dataset.semaforo === '1'){
+                    r1.classList.remove(r1.dataset.clase);
+                }else{
+                    r1.classList.add(r1.dataset.clase);
+                }
+                r1.dataset.semaforo = (r1.dataset.semaforo === '1' ? '0' : '1');
+            }
+        });
+        r1.dataset.semaforo = "1";
+        r1.style.transition = "all " + r1.dataset.delay + "s";
+        r1.classList.add(r1.dataset.clase);
+    }
+    //let r1 = document.querySelector(".rombo1");
+    let r = document.querySelectorAll(".rombo");
+    r.forEach(r1 => mover(r1));
+</script>

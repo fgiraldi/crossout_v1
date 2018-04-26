@@ -29,10 +29,11 @@ class ItemMenu:
         self.select()
 
 btnGarage = ItemMenu('Garage', 'garage')
+btnFactions = ItemMenu('Factions', 'factions')
 btnStorage = ItemMenu('Storage', 'user_storage')
 btnMarket = ItemMenu('Market', 'market')
 btnLogOut = ItemMenu('Logout', 'logout')
-items_menu = [btnGarage, btnMarket, btnStorage, btnLogOut]
+items_menu = [btnGarage, btnFactions, btnMarket, btnStorage, btnLogOut]
 
 def index(request):    
     return HttpResponse("Hello Crossout user")
@@ -60,6 +61,12 @@ def market(request):
     ItemMenu.unselectAllExceptThis(btnMarket, items_menu)
     context = {'user_id': request.user, 'items_menu': items_menu}
     return render(request, 'game/market.html', context)
+   
+@login_required    
+def factions(request):
+    ItemMenu.unselectAllExceptThis(btnFactions, items_menu)
+    context = {'user_id': request.user, 'items_menu': items_menu}
+    return render(request, 'game/factions.html', context)
    
 def logout_view(request):
     logout(request)

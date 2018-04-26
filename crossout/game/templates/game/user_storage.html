@@ -3,7 +3,6 @@
 {% load piezas_tags %}
 {% block content %}
 {% include "game/raritys_css.html" %}
-<h1>Viendo el storage del usuario {{ user_id }}</h1>
 <div class="almacen">
     {% for pieza_almacenada in piezas_almacenadas %}
         {% pieza_en_almacen pieza_almacenada %}

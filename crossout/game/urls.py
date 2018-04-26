@@ -11,6 +11,7 @@ urlpatterns = [
    path('users/storage/', views.user_storage, name='user_storage'),
    path('users/garage/', views.garage, name='garage'),   
    path('users/market/', views.market, name='market'),   
+   path('users/factions/', views.factions, name='factions'),   
    path('users/logout/', views.logout_view, name='logout'),   
    path('users/loggedout/', views.loggedout, name='loggedout'),      
 ]

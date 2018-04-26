@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: lightgray;
+  padding: 50px;
 }
 .almacen .pieza {
   display: flex;
@@ -13,7 +13,7 @@
   margin: 5px 10px;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-top: solid 4px;
   font-weight: bold;
@@ -35,6 +35,9 @@
   display: flex;
   flex-direction: row;
   height: 78px;
+  width: 100%;
+  background-color: black;
+  padding-left: 10px;
 }
 .menu_bar .button_container {
   width: 155px;
@@ -64,4 +67,30 @@
   text-decoration: none;
   line-height: 78px;
   font-size: 1.1em;
+}
+/* user details */
+.user_details {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.user_details .user_currency {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 78px;
+  margin-left: 20px;
+  border: solid 1px blue;
+}
+.user_details .user_currency .fuel {
+  color: #0b0;
+}
+.user_details .user_currency .money {
+  color: goldenrod;
+}
+.user_details .user_profile {
+  display: flex;
+  align-self: flex-start;
+  border: solid 1px red;
+  color: white;
 }

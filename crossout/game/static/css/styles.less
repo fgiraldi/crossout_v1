@@ -1,8 +1,8 @@
 .almacen {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: lightgray;
+    flex-direction: row;    
+    padding: 50px;
 
     .pieza {
         display: flex;
@@ -13,7 +13,7 @@
         margin: 5px 10px;
         background-repeat: no-repeat;
         background-size: 100%;
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(0, 0, 0, .9);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         border-top: solid 4px;
         font-weight: bold;
@@ -41,6 +41,9 @@
     display: flex;
     flex-direction: row;
     height: @alto-boton;
+    width: 100%;
+    background-color: black;
+    padding-left: 10px;
 
     .button_container{
         width: @ancho-boton;
@@ -74,5 +77,36 @@
             line-height: @alto-boton;
             font-size: 1.1em;
         }
+    }
+}
+
+/* user details */
+.user_details {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    .user_currency {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: @alto-boton;
+        margin-left: 20px;
+        border: solid 1px blue;
+
+        .fuel {
+            color: #0b0;
+        }
+
+        .money {
+            color: goldenrod;
+        }
+    }
+
+    .user_profile {
+        display: flex;
+        align-self: flex-start;
+        border: solid 1px red;
+        color: white;
     }
 }
