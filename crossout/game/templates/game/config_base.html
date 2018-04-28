@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/config.css' %}">
+ {% block content %}
+ {% endblock %}
+  <div class="footer_home_link">
+    {% block other_return_links %}
+    {% endblock %}
+    <a href="{% url 'index' %}">Home</a>
+</div>
+    

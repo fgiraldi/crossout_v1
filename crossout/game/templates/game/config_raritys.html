@@ -1,0 +1,13 @@
+{% extends 'game/config_base.html' %}
+{% load raritys_tags %}
+{% block content %}
+<h1 class="title">Crossout Raritys Configuration</h1>
+<div class="raritys_list">
+    {% for rarity in raritys %}
+        {% rarity_en_config rarity %}
+    {% endfor %}
+</div>
+{% endblock %}
+{% block other_return_links %}
+    <a href="{% url 'config_menu' %}">Back to menu</a>
+{% endblock %}

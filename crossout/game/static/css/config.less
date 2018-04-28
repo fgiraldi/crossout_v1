@@ -1,0 +1,126 @@
+@fondo: #333;
+@texto_sobre_fondo: white;
+@fondo_semitrans: rgba(33, 33, 33, .6);
+@font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+    font-family: @font;
+}
+body {
+    background-image: url('../images/crossout_config.jpg');
+    background-size: 100%;
+    background-position: top;
+}
+h1.title {
+    background-color: @fondo;
+    color: @texto_sobre_fondo;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 20px;
+}
+.footer_home_link {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    height: 60px;
+    left: 0;
+    width: 100%;
+    background-color: @fondo;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;    
+
+    a {
+        margin-right: 30px;
+        color: @texto_sobre_fondo;
+        font-size: 1.2em;
+    }
+}
+.raritys_list {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: @fondo_semitrans;
+}
+.rarity:nth-child(odd) {
+    background-color: @fondo_semitrans;
+}
+.rarity {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /*margin-top: 10px;*/
+    font-size: 1.2em;
+    min-height: 45px;
+
+    .nombre {
+        width: 250px;
+        color: white;
+        padding-left: 20px;
+    }
+
+    .color {
+        width: 125px;
+    }
+
+    .orden {
+        width: 60px;
+        text-align: center;
+
+        input {
+            width: 40px;
+        }
+    }
+
+    .acciones {
+        width: 80px;
+    }
+}
+@ancho-boton: 300px;
+@alto-boton: 90px;
+.config_menu_bar {
+    display: flex;
+    flex-direction: column;
+    width: @ancho-boton;
+    padding-left: 10px;
+    margin: 30px;
+
+    .button_container{
+        width: @ancho-boton;
+        height: @alto-boton;
+        margin: 0;
+
+        .fondo {
+            background-image: url('../images/config_menu_bar_button_background.jpg');
+            width: @ancho-boton;
+            height: @alto-boton;
+            transform: skewX(-20deg);            
+            z-index: 1;
+
+            &.resaltado {
+                background-image: url('../images/config_menu_bar_button_background_selected.jpg');
+            }
+        }
+        
+        .button {
+            margin-top: -@alto-boton;
+            width: @ancho-boton;
+            z-index: 2;
+            position: absolute;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-decoration: none;
+            line-height: @alto-boton;
+            font-size: 1.1em;
+            display: block;
+            width: @ancho-boton;
+            height: @alto-boton;
+        }
+    }
+}

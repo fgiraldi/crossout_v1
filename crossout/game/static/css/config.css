@@ -1,0 +1,109 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+  background-image: url('../images/crossout_config.jpg');
+  background-size: 100%;
+  background-position: top;
+}
+h1.title {
+  background-color: #333;
+  color: white;
+  height: 2em;
+  line-height: 2em;
+  padding-left: 20px;
+}
+.footer_home_link {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  height: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer_home_link a {
+  margin-right: 30px;
+  color: white;
+  font-size: 1.2em;
+}
+.raritys_list {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(33, 33, 33, 0.6);
+}
+.rarity:nth-child(odd) {
+  background-color: rgba(33, 33, 33, 0.6);
+}
+.rarity {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /*margin-top: 10px;*/
+  font-size: 1.2em;
+  min-height: 45px;
+}
+.rarity .nombre {
+  width: 250px;
+  color: white;
+  padding-left: 20px;
+}
+.rarity .color {
+  width: 125px;
+}
+.rarity .orden {
+  width: 60px;
+  text-align: center;
+}
+.rarity .orden input {
+  width: 40px;
+}
+.rarity .acciones {
+  width: 80px;
+}
+.config_menu_bar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding-left: 10px;
+  margin: 30px;
+}
+.config_menu_bar .button_container {
+  width: 300px;
+  height: 90px;
+  margin: 0;
+}
+.config_menu_bar .button_container .fondo {
+  background-image: url('../images/config_menu_bar_button_background.jpg');
+  width: 300px;
+  height: 90px;
+  transform: skewX(-20deg);
+  z-index: 1;
+}
+.config_menu_bar .button_container .fondo.resaltado {
+  background-image: url('../images/config_menu_bar_button_background_selected.jpg');
+}
+.config_menu_bar .button_container .button {
+  margin-top: -90px;
+  width: 300px;
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+}
+.config_menu_bar .button_container a {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  line-height: 90px;
+  font-size: 1.1em;
+  display: block;
+  width: 300px;
+  height: 90px;
+}

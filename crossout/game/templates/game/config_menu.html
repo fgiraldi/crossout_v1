@@ -1,0 +1,31 @@
+{% extends 'game/config_base.html' %}
+{% block content %}
+<h1 class="title">Crossout Configuration Menu</h1>
+<div class="config_menu_bar">
+    <div class="button_container">
+        <div class="fondo raritys"></div>
+        <div class="button"><a href="{% url 'config_raritys' %}" data-item-menu="raritys">Raritys</a></div>
+    </div>
+</div>
+<script async>
+    let menu_items = document.querySelectorAll(".config_menu_bar .button_container a");
+    menu_items.forEach(menu_item => resaltarse(menu_item));
+
+    function resaltarse(menu_item){        
+        menu_item.addEventListener('mouseover', iluminate);
+        menu_item.addEventListener('mouseout', deiluminate);
+    }
+
+    function iluminate(e){
+        let menu_item = e.target;
+        let fondo = document.querySelector(`.fondo.${menu_item.dataset.itemMenu}`);
+        fondo.classList.add('resaltado');
+    }
+
+    function deiluminate(e){
+        let menu_item = e.target;
+        let fondo = document.querySelector(`.fondo.${menu_item.dataset.itemMenu}`);
+        fondo.classList.remove('resaltado');
+    }
+</script>
+{% endblock %}

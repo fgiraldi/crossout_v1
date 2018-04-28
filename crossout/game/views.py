@@ -45,7 +45,7 @@ def welcome(request):
 @login_required
 def user_storage(request):
     ItemMenu.unselectAllExceptThis(btnStorage, items_menu)    
-    piezas_almacenadas = Piezas_Storage.objects.filter(usuario=request.user)    
+    piezas_almacenadas = Piezas_Storage.objects.filter(usuario=request.user).order_by('pieza__rarity__orden')
     raritys = Rarity.objects.all()
     context = {'user_id': request.user, 'piezas_almacenadas': piezas_almacenadas, 'raritys': raritys, 'items_menu': items_menu}
     return render(request, 'game/user_storage.html', context)
@@ -74,3 +74,11 @@ def logout_view(request):
 
 def loggedout(request):
     return render(request, 'game/logout.html')
+
+def config_menu(request):
+    return render(request, 'game/config_menu.html')
+
+def config_raritys(request):
+    raritys = Rarity.objects.all().order_by('orden')
+    context = {'raritys': raritys}
+    return render(request, 'game/config_raritys.html', context)
